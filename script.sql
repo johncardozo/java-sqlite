@@ -1,0 +1,5 @@
+CREATE TABLE pelicula (
+	id     INTEGER      PRIMARY KEY AUTOINCREMENT,
+	titulo VARCHAR (50),
+	anio   INTEGER
+);
