@@ -1,11 +1,11 @@
 # Blockbuster
 
-This is a simple example of a Java console application with a 4 tier architecture.
+Este es un ejemplo simple de una aplicación de consola escrita en Java con una arquitectura de 4 capas.
 
-It requires:
+Este proyecto requiere para su ejecución:
 
 - Eclipse
 - JDK 1.7
 - SQLite
 
-It includes a database example (blockbuster.db)
+Incluye una base de datos de ejemplo (blockbuster.db)
