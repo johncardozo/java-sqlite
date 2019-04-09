@@ -1,9 +1,9 @@
-package netflix.business;
+package blockbuster.business;
 
 import java.util.ArrayList;
 
-import netflix.data.PeliculaDAO;
-import netflix.model.Pelicula;
+import blockbuster.data.PeliculaDAO;
+import blockbuster.model.Pelicula;
 
 public class PeliculaBO {
 

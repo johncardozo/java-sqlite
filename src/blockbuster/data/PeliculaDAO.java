@@ -1,36 +1,15 @@
-package netflix.data;
+package blockbuster.data;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import netflix.model.Pelicula;
+import blockbuster.model.Pelicula;
 
 public class PeliculaDAO {
-	
-	// URL de conexión a la base de datos
-	private static String url = "jdbc:sqlite:netflix.db";
-	
-	/**
-	 * Obtiene una conexion a la base de datos
-	 * @return conexión a la base de datos
-	 */
-	private Connection obtenerConexion() {
-        // SQLite connection string
-        Connection conn = null;
-        try {
-        	// Ejecuta la conexion a la base de datos
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        // Retorna la conexión a la base de datos
-        return conn;
-    }
 		
 	/**
 	 * Guarda una pelicula en la base de datos
@@ -43,7 +22,7 @@ public class PeliculaDAO {
         
         try {
         	// Obtiene la conexion a la base de datos
-        	Connection conexion = obtenerConexion();
+        	Connection conexion = Conexion.obtenerConexion();
             
         	// Crea la sentencia
         	PreparedStatement statement = conexion.prepareStatement(sql);
@@ -67,14 +46,14 @@ public class PeliculaDAO {
 	public ArrayList<Pelicula> obtenerPeliculas() {
 		
 		// Construye la sentencia SQL
-        String sql = "SELECT id, titulo, anio FROM pelicula";
+        String sql = "SELECT id, titulo, anio FROM pelicula order by anio ASC";
         
         // Crea la lista de peliculas
         ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
         
         try {
         	// Obtiene la conexión a la base de datos
-        	Connection conexion = obtenerConexion();
+        	Connection conexion = Conexion.obtenerConexion();
         
         	// Crea la sentencia usando la coneion    	
             Statement sentencia  = conexion.createStatement();

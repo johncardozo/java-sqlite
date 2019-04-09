@@ -1,10 +1,10 @@
-package netflix.ui;
+package blockbuster.ui;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import netflix.business.PeliculaBO;
-import netflix.model.Pelicula;
+import blockbuster.business.PeliculaBO;
+import blockbuster.model.Pelicula;
 
 public class Principal {
 
@@ -28,12 +28,13 @@ public class Principal {
 			case CREAR_PELICULA:
 				
 				// Crea el objeto pelicula
-				Pelicula pelicula = new Pelicula();
-				pelicula.setTitulo(pedirString("Digite el titulo de la pelicula"));
-				pelicula.setAnio(pedirEntero("Digite el año de la pelicula"));
+				Pelicula nuevaPelicula = new Pelicula();
+				// Guarda los datos el objeto
+				nuevaPelicula.setTitulo(pedirString("Digite el titulo de la pelicula"));
+				nuevaPelicula.setAnio(pedirEntero("Digite el año de la pelicula"));
 				
 				// Guarda la pelicula en el sistema
-				bo.crearPelicula(pelicula);				
+				bo.crearPelicula(nuevaPelicula);				
 				
 				break;
 			case LISTAR_PELICULAS:
@@ -43,13 +44,13 @@ public class Principal {
 				peliculas = bo.obtenerTodas();
 				
 				// Imprime las peliculas
-				for (Pelicula p: peliculas) {
-					System.out.println(p);
+				for (Pelicula pelicula: peliculas) {
+					System.out.println(pelicula);
 				}
 				
 				break;
 			case SALIR:				
-				System.out.print("Gracias por utilizar Netflix");
+				System.out.print("Hasta pronto!!!");
 				
 				break;
 
@@ -67,7 +68,7 @@ public class Principal {
 	private static int menu() {
 
 		// Muestra el menu en consola
-		System.out.println("\n -- NETFLIX --");
+		System.out.println("\n -- BLOCKBUSTER --");
 		System.out.println("1. Crear pelicula");
 		System.out.println("2. Listar peliculas");
 		System.out.println("3. Salir");

@@ -1,4 +1,4 @@
-package netflix.model;
+package blockbuster.model;
 
 public class Pelicula {
 
