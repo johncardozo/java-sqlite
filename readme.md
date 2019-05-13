@@ -9,3 +9,5 @@ Este proyecto requiere para su ejecución:
 - SQLite
 
 Incluye una base de datos de ejemplo (blockbuster.db)
+
+En el archivo *script.sql* se encuentran los comandos SQL para la creación de la base de datos.

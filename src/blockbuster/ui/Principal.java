@@ -34,7 +34,10 @@ public class Principal {
 				nuevaPelicula.setAnio(pedirEntero("Digite el año de la pelicula"));
 				
 				// Guarda la pelicula en el sistema
-				bo.crearPelicula(nuevaPelicula);				
+				bo.crearPelicula(nuevaPelicula);	
+				
+				// Mensaje al usuario
+				System.out.println("Se creó la película con id = " + nuevaPelicula.getId());
 				
 				break;
 			case LISTAR_PELICULAS:

@@ -34,9 +34,25 @@ public class PeliculaDAO {
             // Ejecuta la sentencia
             statement.executeUpdate();
             
+            // Obtiene las llaves generadas en el INSERT
+            ResultSet resultSet = statement.getGeneratedKeys();
+			
+            // Obtiene el identificador generado en la base de datos
+			if(resultSet.next()){
+				// Obtiene el valor
+				int id = resultSet.getInt(1);
+				
+				// Asigna el id al objeto recibido
+				pelicula.setId(id);
+			}
+            
+            // Cierra la conexión
+            conexion.close();
+                        
         } catch (SQLException e) {
             System.err.println(e.getMessage());
-        }		
+        }
+        
 	}
 
 	/**
@@ -73,6 +89,10 @@ public class PeliculaDAO {
             	// Agrega el objeto a la lista
             	peliculas.add(pelicula);            	
             }
+            
+            // Cierra la conexión
+            conexion.close();
+            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
